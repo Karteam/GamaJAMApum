@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Random = UnityEngine.Random;
 
 public class DoorSwitch : MonoBehaviour
 {
+    public AudioSource audioSource;
 
     public GameObject Door;
 
@@ -22,6 +24,7 @@ public class DoorSwitch : MonoBehaviour
         Outline.SetActive(false);
 
         isOpen = false;
+        audioSource.enabled = false;
     }
 
 
@@ -45,6 +48,8 @@ public class DoorSwitch : MonoBehaviour
             {
                 anim.SetTrigger("Open");
                 isOpen = true;
+                audioSource.enabled = true;
+
                 StartCoroutine(DelayedMethod());
                 
 
