@@ -6,10 +6,6 @@ public class ClosingDoorTrigger : MonoBehaviour
 {
     public GameObject Door;
 
-    private void Start()
-    {
-        Door.SetActive(false);
-    }
 
     void OnTriggerEnter(Collider other)
     {
