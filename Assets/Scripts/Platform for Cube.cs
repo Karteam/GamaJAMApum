@@ -5,14 +5,17 @@ using UnityEngine;
 public class PlatformforCube : MonoBehaviour
 {
     public GameObject Door;
-    public AudioSource audioSource;
-    public AudioSource audioSource1;
+ 
+
+    public GameObject audio1;
+    public GameObject audio2;
+
+
 
     private void Start()
     {
         Door.SetActive(true);
-        audioSource.enabled = false;
-        audioSource1.enabled = false;
+       
     }
 
     void OnTriggerEnter(Collider other)
@@ -20,7 +23,8 @@ public class PlatformforCube : MonoBehaviour
         if (other.tag == "Cube")
         {
             Door.SetActive(false);
-            audioSource.enabled = true;
+          Instantiate(audio1, transform.position, transform.rotation);
+     
         }
     }
     void OnTriggerExit(Collider other)
@@ -28,7 +32,7 @@ public class PlatformforCube : MonoBehaviour
         if (other.tag == "Cube")
         {
             Door.SetActive(true);
-            audioSource1.enabled = true;
+            Instantiate(audio2, transform.position, transform.rotation);
         }
     }
 
