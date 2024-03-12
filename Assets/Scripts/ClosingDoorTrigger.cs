@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClosingDoorTrigger : MonoBehaviour
 {
     public GameObject Door;
-
+    public GameObject audio;
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,4 +14,5 @@ public class ClosingDoorTrigger : MonoBehaviour
             Door.SetActive(true);
         }
     }
+
 }
